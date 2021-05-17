@@ -10,8 +10,12 @@ export class AnimalService {
   constructor() { }
 
   get(): Animal {
-    return {
-      name: 'Garfield',
+    return this.findAll()[0];
+  }
+
+  findAll(): Animal[] {
+    return [{
+      name: 'Garfield 1',
       species: 'chat',
       comment: 'blabla',
       owner: {
@@ -19,6 +23,15 @@ export class AnimalService {
         phone: '0676563412',
         email: 'toto@gmail.com'
       }
-    }
+    }, {
+      name: 'Garfield 2',
+      species: 'chat',
+      comment: 'blabla',
+      owner: {
+        name: 'Mr Toto',
+        phone: '0676563412',
+        email: 'toto@gmail.com'
+      }
+    }];
   }
 }

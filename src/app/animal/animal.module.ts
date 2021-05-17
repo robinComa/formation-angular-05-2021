@@ -1,16 +1,18 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { AnimalComponent } from './animal/animal.component';
+import { AnimalsComponent } from './animals/animals.component';
 
 @NgModule({
   declarations: [
-    AnimalComponent
+    AnimalComponent,
+    AnimalsComponent
   ],
   imports: [
     CommonModule
   ],
   exports: [
-    AnimalComponent
+    AnimalsComponent
   ],
   providers: []
 })
