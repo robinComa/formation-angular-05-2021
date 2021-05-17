@@ -2,8 +2,6 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { AnimalComponent } from './animal/animal.component';
 
-
-
 @NgModule({
   declarations: [
     AnimalComponent
@@ -13,6 +11,7 @@ import { AnimalComponent } from './animal/animal.component';
   ],
   exports: [
     AnimalComponent
-  ]
+  ],
+  providers: []
 })
 export class AnimalModule { }
