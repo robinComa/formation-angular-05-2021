@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Animal } from '../shared/animal';
 
 @Component({
   selector: 'app-animal',
@@ -7,12 +8,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AnimalComponent implements OnInit {
 
-  animal: any;
+  animal!: Animal;
 
   constructor() { }
 
   ngOnInit(): void {
     this.animal = {
+      name: 'Garfield',
       species: 'chat',
       comment: 'blabla',
       owner: {
