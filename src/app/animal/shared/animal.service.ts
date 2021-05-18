@@ -2,29 +2,7 @@ import { Injectable } from '@angular/core';
 
 import { Animal } from './animal';
 
-const animals: Animal[] = [{
-  id: 1,
-  name: 'Garfield 1',
-  species: 'chat',
-  comment: 'blabla',
-  lastVisit: 1234567890123,
-  owner: {
-    name: 'Mr Toto',
-    phone: '06.76.56.34.12',
-    email: 'toto@gmail.com'
-  }
-}, {
-  id: 2,
-  name: 'Garfield 2',
-  species: 'chat',
-  comment: 'blabla',
-  lastVisit: 1234567890123,
-  owner: {
-    name: 'Mr Toto',
-    phone: '06 76 56 34 12',
-    email: 'toto@gmail.com'
-  }
-}];
+const animals: Animal[] = [];
 
 @Injectable({
   providedIn: 'root'
