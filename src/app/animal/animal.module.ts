@@ -1,11 +1,12 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { AnimalComponent } from './animal/animal.component';
 import { AnimalsComponent } from './animals/animals.component';
 import { MailtoDirective } from './shared/mailto.directive';
 import { PhonePipe } from './shared/phone.pipe';
 import { AnimalItemComponent } from './animal-item/animal-item.component';
+import { HttpRequestInterceptor } from './shared/http-request.interceptor';
 
 @NgModule({
   declarations: [
@@ -22,6 +23,8 @@ import { AnimalItemComponent } from './animal-item/animal-item.component';
   exports: [
     AnimalsComponent
   ],
-  providers: []
+  providers: [
+    { provide: HTTP_INTERCEPTORS, useClass: HttpRequestInterceptor, multi: true }
+  ]
 })
 export class AnimalModule { }
