@@ -8,6 +8,8 @@ import { PhonePipe } from './shared/phone.pipe';
 import { AnimalItemComponent } from './animal-item/animal-item.component';
 import { HttpRequestInterceptor } from './shared/http-request.interceptor';
 import { RouterModule } from '@angular/router';
+import { AnimalRoutingModule } from './animal-routing.module';
+import { AnimalService } from './shared/animal.service';
 
 @NgModule({
   declarations: [
@@ -20,12 +22,12 @@ import { RouterModule } from '@angular/router';
   imports: [
     CommonModule,
     HttpClientModule,
-    RouterModule
+    RouterModule,
+    AnimalRoutingModule
   ],
-  exports: [
-    AnimalsComponent
-  ],
+  exports: [],
   providers: [
+    AnimalService,
     { provide: HTTP_INTERCEPTORS, useClass: HttpRequestInterceptor, multi: true }
   ]
 })

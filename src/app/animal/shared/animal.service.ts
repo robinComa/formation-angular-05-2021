@@ -6,9 +6,7 @@ import { Animal } from './animal';
 
 const api = 'http://localhost:3000';
 
-@Injectable({
-  providedIn: 'root'
-})
+@Injectable()
 export class AnimalService {
 
   constructor(private httpClient: HttpClient) { }

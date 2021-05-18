@@ -1,14 +1,13 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { AnimalComponent } from './animal/animal/animal.component';
-import { AnimalsComponent } from './animal/animals/animals.component';
+import { HomeComponent } from './home/home.component';
 
 const routes: Routes = [{
   path: '',
-  component: AnimalsComponent
+  component: HomeComponent
 }, {
-  path: ':id',
-  component: AnimalComponent
+  path: 'animals',
+  loadChildren: () => import('./animal/animal.module').then(m => m.AnimalModule)
 }];
 
 @NgModule({

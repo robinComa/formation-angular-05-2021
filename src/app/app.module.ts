@@ -3,20 +3,20 @@ import localeFr from '@angular/common/locales/fr';
 import { LOCALE_ID, NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
-import { AnimalModule } from './animal/animal.module';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { HomeComponent } from './home/home.component';
 
 registerLocaleData(localeFr, 'fr');
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule,
-    AnimalModule
+    AppRoutingModule
   ],
   providers: [
     { provide: LOCALE_ID, useValue: 'fr' }
