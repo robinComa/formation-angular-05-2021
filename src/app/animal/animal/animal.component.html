@@ -1,4 +1,7 @@
 <h2>{{ animal?.name }}</h2>
+
+<a [routerLink]="['..', 'form', animal?.id]">Edit</a>
+
 <p>Espèce : {{ animal?.species }}</p>
 <p>Dernière visite : {{ animal?.lastVisit | date:'EEEE d MMMM y' }}</p>
 <p>Commentaire : {{ animal?.comment }}</p>

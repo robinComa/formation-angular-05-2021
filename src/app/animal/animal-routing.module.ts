@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AnimalComponent } from './animal/animal.component';
 import { AnimalsComponent } from './animals/animals.component';
+import { FormComponent } from './form/form.component';
 
 const routes: Routes = [{
   path: '',
@@ -9,6 +10,15 @@ const routes: Routes = [{
 }, {
   path: ':id',
   component: AnimalComponent
+}, {
+  path: 'form',
+  children: [{
+    path: '',
+    component: FormComponent
+  }, {
+    path: ':id',
+    component: FormComponent
+  }]
 }];
 
 @NgModule({

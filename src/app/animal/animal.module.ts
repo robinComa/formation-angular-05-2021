@@ -10,6 +10,7 @@ import { HttpRequestInterceptor } from './shared/http-request.interceptor';
 import { RouterModule } from '@angular/router';
 import { AnimalRoutingModule } from './animal-routing.module';
 import { AnimalService } from './shared/animal.service';
+import { FormComponent } from './form/form.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { AnimalService } from './shared/animal.service';
     AnimalsComponent,
     MailtoDirective,
     PhonePipe,
-    AnimalItemComponent
+    AnimalItemComponent,
+    FormComponent
   ],
   imports: [
     CommonModule,
