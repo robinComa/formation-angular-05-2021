@@ -5,8 +5,8 @@ import { Pipe, PipeTransform } from '@angular/core';
 })
 export class PhonePipe implements PipeTransform {
 
-  transform(value: string, char: string = ' '): string {
-    return value.replace(/[^0-9]/g, char);
+  transform(value: string | undefined, char: string = ' '): string {
+    return (value || '').replace(/[^0-9]/g, char);
   }
 
 }

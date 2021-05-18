@@ -1,5 +1,7 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 import { Animal } from '../shared/animal';
+import { AnimalService } from '../shared/animal.service';
 
 @Component({
   selector: 'app-animal',
@@ -8,11 +10,16 @@ import { Animal } from '../shared/animal';
 })
 export class AnimalComponent implements OnInit {
 
-  @Input() animal!: Animal;
+  animal!: Animal;
 
-  constructor() { }
+  constructor(
+    private animalService: AnimalService,
+    private activatedRoute: ActivatedRoute
+  ) { }
 
   ngOnInit(): void {
+    const id = this.activatedRoute.snapshot.params.id;
+    this.animalService.get(id).subscribe(animal => this.animal = animal);
   }
 
 }

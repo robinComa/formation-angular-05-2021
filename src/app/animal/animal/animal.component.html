@@ -1,11 +1,11 @@
-<h2>{{ animal.name }}</h2>
-<p>Espèce : {{ animal.species }}</p>
-<p>Dernière visite : {{ animal.lastVisit | date:'EEEE d MMMM y' }}</p>
-<p>Commentaire : {{ animal.comment }}</p>
+<h2>{{ animal?.name }}</h2>
+<p>Espèce : {{ animal?.species }}</p>
+<p>Dernière visite : {{ animal?.lastVisit | date:'EEEE d MMMM y' }}</p>
+<p>Commentaire : {{ animal?.comment }}</p>
 
 <h3>Propriétaire : </h3>
-<p>Nom : {{ animal.owner.name }}</p>
-<p>Téléphone : {{ animal.owner.phone | phone:'' }}</p>
+<p>Nom : {{ animal?.owner?.name }}</p>
+<p>Téléphone : {{ animal?.owner?.phone | phone:'' }}</p>
 <p>Email : 
-  <a appMailto>{{ animal.owner.email }}</a>
+  <a appMailto>{{ animal?.owner?.email }}</a>
 </p>

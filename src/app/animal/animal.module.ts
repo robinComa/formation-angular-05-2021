@@ -7,6 +7,7 @@ import { MailtoDirective } from './shared/mailto.directive';
 import { PhonePipe } from './shared/phone.pipe';
 import { AnimalItemComponent } from './animal-item/animal-item.component';
 import { HttpRequestInterceptor } from './shared/http-request.interceptor';
+import { RouterModule } from '@angular/router';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { HttpRequestInterceptor } from './shared/http-request.interceptor';
   ],
   imports: [
     CommonModule,
-    HttpClientModule
+    HttpClientModule,
+    RouterModule
   ],
   exports: [
     AnimalsComponent
