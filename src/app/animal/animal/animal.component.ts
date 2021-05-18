@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { Subscription } from 'rxjs';
 import { Animal } from '../shared/animal';
 import { AnimalService } from '../shared/animal.service';
 
@@ -8,9 +9,11 @@ import { AnimalService } from '../shared/animal.service';
   templateUrl: './animal.component.html',
   styleUrls: ['./animal.component.scss']
 })
-export class AnimalComponent implements OnInit {
+export class AnimalComponent implements OnInit, OnDestroy {
 
   animal!: Animal;
+
+  private subscription!: Subscription;
 
   constructor(
     private animalService: AnimalService,
@@ -18,8 +21,14 @@ export class AnimalComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    const id = this.activatedRoute.snapshot.params.id;
-    this.animalService.get(id).subscribe(animal => this.animal = animal);
+    this.subscription = this.activatedRoute.params.subscribe(params => {
+      const id = params.id;
+      this.animalService.get(id).subscribe(animal => this.animal = animal);
+    });
+  }
+
+  ngOnDestroy(): void {
+    this.subscription.unsubscribe();
   }
 
 }
