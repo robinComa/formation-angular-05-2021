@@ -23,18 +23,6 @@
         "phone": "06 76 56 34 12",
         "email": "toto@gmail.com"
       }
-    },
-    {
-      "name": "Mon chat",
-      "species": "Chat",
-      "comment": "blabla",
-      "lastVisit": 1621418019927,
-      "owner": {
-        "name": "Robin",
-        "email": "robin@placeme.io",
-        "phone": "0989786546"
-      },
-      "id": 3
     }
   ]
 }

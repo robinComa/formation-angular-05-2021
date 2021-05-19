@@ -12,6 +12,9 @@ import { AnimalRoutingModule } from './animal-routing.module';
 import { AnimalService } from './shared/animal.service';
 import { FormComponent } from './form/form.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { MatButtonModule } from '@angular/material/button';
+import { MatIconModule } from '@angular/material/icon';
+import { MatListModule } from '@angular/material/list';
 
 @NgModule({
   declarations: [
@@ -28,6 +31,9 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     RouterModule,
     FormsModule,
     ReactiveFormsModule,
+    MatButtonModule,
+    MatIconModule,
+    MatListModule,
     AnimalRoutingModule
   ],
   exports: [],

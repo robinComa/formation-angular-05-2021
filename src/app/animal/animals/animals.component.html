@@ -1,7 +1,10 @@
-<a [routerLink]="['form']">Ajouter un animal</a>
+<a mat-fab color="primary" [routerLink]="['form']">
+  <mat-icon>add</mat-icon>
+</a>
 
-<ul>
-  <li *ngFor="let a of animals">
+<mat-list role="list">
+  <mat-list-item *ngFor="let a of animals" role="listitem">
+    <mat-icon mat-list-icon>pets</mat-icon>
     <app-animal-item [animal]="a" (remove)="delete($event)"></app-animal-item>
-  </li>
-</ul>
+  </mat-list-item>
+</mat-list>
