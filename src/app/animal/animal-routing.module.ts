@@ -8,9 +8,6 @@ const routes: Routes = [{
   path: '',
   component: AnimalsComponent
 }, {
-  path: ':id',
-  component: AnimalComponent
-}, {
   path: 'form',
   children: [{
     path: '',
@@ -19,6 +16,9 @@ const routes: Routes = [{
     path: ':id',
     component: FormComponent
   }]
+}, {
+  path: ':id',
+  component: AnimalComponent
 }];
 
 @NgModule({
