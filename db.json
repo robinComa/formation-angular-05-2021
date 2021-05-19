@@ -2,14 +2,14 @@
   "animals": [
     {
       "id": 1,
-      "name": "Garfield 1",
+      "name": "Garfield",
       "species": "chat",
       "comment": "blabla",
       "lastVisit": 1234567890123,
       "owner": {
         "name": "Mr Toto",
-        "phone": "06.76.56.34.12",
-        "email": "toto@gmail.com"
+        "email": "robin@placeme.io",
+        "phone": "06.76.56.34.12"
       }
     },
     {
@@ -23,6 +23,18 @@
         "phone": "06 76 56 34 12",
         "email": "toto@gmail.com"
       }
+    },
+    {
+      "name": "Mon chat",
+      "species": "Chat",
+      "comment": "blabla",
+      "lastVisit": 1621418019927,
+      "owner": {
+        "name": "Robin",
+        "email": "robin@placeme.io",
+        "phone": "0989786546"
+      },
+      "id": 3
     }
   ]
 }

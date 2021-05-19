@@ -1,39 +1,61 @@
-<form>
+<form [formGroup]="animalForm" (submit)="onSubmit()">
 
   <div>
     <label for="name">Nom</label>
-    <input id="name" name="name" type="text" placeholder="Ex : Garfield"/>
+    <input formControlName="name" required minlength="2" id="name" name="name" type="text" placeholder="Ex : Garfield"/>
+    <p *ngIf="animalForm.get('name')?.invalid && submited">
+      <span *ngIf="animalForm.get('name')?.errors?.required">Le nom est obligatoire !</span>
+      <span *ngIf="animalForm.get('name')?.errors?.minlength">Le nom doit avoir au moins 2 caractères !</span>
+    </p>
   </div>
 
   <div>
     <label for="species">Espèce</label>
-    <input id="species" name="species" type="text" placeholder="Ex : chat"/>
+    <input formControlName="species" required id="species" name="species" type="text" placeholder="Ex : chat"/>
+    <p *ngIf="animalForm.get('species')?.invalid && submited">
+      <span *ngIf="animalForm.get('species')?.errors?.required">L'espèce est obligatoire !</span>
+    </p>
   </div>
 
   <div>
     <label for="commment">Commentaire</label>
-    <textarea id="commment" placeholder="Ex : Lorem Ipsum"></textarea>
+    <textarea formControlName="comment" id="comment" name="comment" placeholder="Ex : Lorem Ipsum"></textarea>
   </div>
 
   <div>
     <label for="lastVisit">Dernère visite</label>
-    <input id="lastVisit" name="lastVisit" type="text" placeholder="Ex : 1234567890123"/>
+    <input formControlName="lastVisit" required id="lastVisit" name="lastVisit" type="text" placeholder="Ex : 1234567890123"/>
+    <p *ngIf="animalForm.get('lastVisit')?.invalid && submited">
+      <span *ngIf="animalForm.get('lastVisit')?.errors?.required">La date de dernière visite est obligatoire !</span>
+    </p>
   </div>
 
-  <div>
-    <label for="owner-name">Nom du propriétaire</label>
-    <input id="owner-name" name="owner-name" type="text" placeholder="Ex : Mr Smith"/>
-  </div>
-
-  <div>
-    <label for="owner-phone">Téléphone du propriétaire</label>
-    <input id="owner-phone" name="owner-phone" type="text" placeholder="Ex : 0675676545"/>
-  </div>
-
-  <div>
-    <label for="owner-email">Email du propriétaire</label>
-    <input id="owner-email" name="owner-email" type="text" placeholder="Ex : smith@gmail.Com"/>
-  </div>
+  <ng-container formGroupName="owner">
+  
+    <div>
+      <label for="owner-name">Nom du propriétaire</label>
+      <input formControlName="name" required id="owner-name" name="owner-name" type="text" placeholder="Ex : Mr Smith"/>
+      <p *ngIf="animalForm.get('owner.name')?.invalid && submited">
+        <span *ngIf="animalForm.get('owner.name')?.errors?.required">Le nom du propriétaire est obligatoire !</span>
+      </p>
+    </div>
+  
+    <div>
+      <label for="owner-phone">Téléphone du propriétaire</label>
+      <input formControlName="phone" required id="owner-phone" name="owner-phone" type="text" placeholder="Ex : 0675676545"/>
+      <p *ngIf="animalForm.get('owner.phone')?.invalid && submited">
+        <span *ngIf="animalForm.get('owner.phone')?.errors?.required">Le téléphone du propriétaire est obligatoire !</span>
+      </p>
+    </div>
+  
+    <div>
+      <label for="owner-email">Email du propriétaire</label>
+      <input formControlName="email" id="owner-email" name="owner-email" type="email" placeholder="Ex : smith@gmail.Com"/>
+      <p *ngIf="animalForm.get('owner.email')?.invalid && submited">
+        <span *ngIf="animalForm.get('owner.email')?.errors?.email">Ce mail n'est pas valide !</span>
+      </p>
+    </div>
+  </ng-container>
 
   <hr/>
 

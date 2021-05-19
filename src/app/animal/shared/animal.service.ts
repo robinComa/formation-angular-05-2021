@@ -19,8 +19,8 @@ export class AnimalService {
     return this.httpClient.get<Animal>(`${api}/animals/${id}`);
   }
 
-  create(animal: Animal): Observable<void> {
-    return this.httpClient.post<void>(`${api}/animals`, animal);
+  create(animal: Animal): Observable<Animal> {
+    return this.httpClient.post<Animal>(`${api}/animals`, animal);
   }
 
   update(animal: Animal): Observable<void> {

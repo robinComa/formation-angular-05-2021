@@ -11,6 +11,7 @@ import { RouterModule } from '@angular/router';
 import { AnimalRoutingModule } from './animal-routing.module';
 import { AnimalService } from './shared/animal.service';
 import { FormComponent } from './form/form.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -25,6 +26,8 @@ import { FormComponent } from './form/form.component';
     CommonModule,
     HttpClientModule,
     RouterModule,
+    FormsModule,
+    ReactiveFormsModule,
     AnimalRoutingModule
   ],
   exports: [],
