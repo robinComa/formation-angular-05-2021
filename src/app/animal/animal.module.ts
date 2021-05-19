@@ -15,6 +15,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import { MatListModule } from '@angular/material/list';
+import { TranslateModule } from '@ngx-translate/core';
 
 @NgModule({
   declarations: [
@@ -34,6 +35,7 @@ import { MatListModule } from '@angular/material/list';
     MatButtonModule,
     MatIconModule,
     MatListModule,
+    TranslateModule,
     AnimalRoutingModule
   ],
   exports: [],

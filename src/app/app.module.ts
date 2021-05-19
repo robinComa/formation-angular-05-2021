@@ -9,8 +9,15 @@ import { HomeComponent } from './home/home.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatIconModule } from '@angular/material/icon';
+import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
+import { TranslateHttpLoader } from '@ngx-translate/http-loader';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
 
 registerLocaleData(localeFr, 'fr');
+
+export function translateLoader(http: HttpClient) {
+  return new TranslateHttpLoader(http);
+}
 
 @NgModule({
   declarations: [
@@ -22,7 +29,17 @@ registerLocaleData(localeFr, 'fr');
     AppRoutingModule,
     BrowserAnimationsModule,
     MatToolbarModule,
-    MatIconModule
+    MatIconModule,
+    HttpClientModule,
+    TranslateModule.forRoot({
+      defaultLanguage: 'fr',
+      useDefaultLang: true,
+      loader: {
+        provide: TranslateLoader,
+        useFactory: translateLoader,
+        deps: [HttpClient]
+      }
+    })
   ],
   providers: [
     { provide: LOCALE_ID, useValue: 'fr' }
