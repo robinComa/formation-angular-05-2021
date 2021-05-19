@@ -1,10 +1,11 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
+import { environment } from 'src/environments/environment';
 
 import { Animal } from './animal';
 
-const api = 'http://localhost:3000';
+const api = environment.api;
 
 @Injectable()
 export class AnimalService {
